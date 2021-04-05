@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TetsJokesApp.Models;
 
 namespace TetsJokesApp.Data
 {
@@ -12,5 +13,6 @@ namespace TetsJokesApp.Data
             : base(options)
         {
         }
+        public DbSet<TetsJokesApp.Models.Joke> Joke { get; set; }
     }
 }
