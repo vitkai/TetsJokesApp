@@ -75,7 +75,8 @@ namespace TetsJokesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                joke.UserID = User.Identity.Name; //.GetUserId();
+                joke.UserID = User.Identity.Name;
+                //joke.UserID = User.Identity.GetUserId();
                 _context.Add(joke);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
