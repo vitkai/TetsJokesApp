@@ -11,6 +11,9 @@ namespace TetsJokesApp.Models
         public string JokeQuestion { get; set; }
         public string JokeAnswer { get; set; }
 
+        public string UserID { get; set; }
+        public virtual ApplicationUser User { get; set; }
+
         public Joke()
         {
 

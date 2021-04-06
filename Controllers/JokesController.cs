@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TetsJokesApp.Data;
 using TetsJokesApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace TetsJokesApp.Controllers
 {
@@ -74,6 +75,7 @@ namespace TetsJokesApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                joke.UserID = User.Identity.Name; //.GetUserId();
                 _context.Add(joke);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
